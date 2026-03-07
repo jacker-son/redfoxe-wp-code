@@ -2,8 +2,9 @@
 # 屏蔽掉一切文件
 /*
 
-# 唯一的特例：允许进入 wp-content 目录
+# 唯一的特例：允许进入 wp-content 和 .github 目录
 !wp-content/
+!.github/
 
 # 但进入 wp-content 后，继续屏蔽里面的一切
 wp-content/*
@@ -11,13 +12,16 @@ wp-content/*
 # 以下是我们在 wp-content 中破例允许跟踪的东西：
 !wp-content/themes/
 wp-content/themes/*
-# ---> 修改下面的 your-theme 为您未来真正想自己写代码的主题文件夹名 <---
-# !wp-content/themes/your-theme/
+
+# ⭐ 实际激活的自定义子主题（所有业务代码在这里）
+!wp-content/themes/theme/
+!wp-content/themes/theme/**
 
 !wp-content/plugins/
 wp-content/plugins/*
-# ---> 修改下面的 your-plugin 为您未来真正想自己写代码的业务插件文件夹名 <---
-# !wp-content/plugins/your-plugin/
+# ---> 如果未来自己写了自定义插件，仿照上面格式添加放行规则 <---
+# !wp-content/plugins/your-custom-plugin/
+# !wp-content/plugins/your-custom-plugin/**
 
 # 基本的系统隐藏文件
 .DS_Store
